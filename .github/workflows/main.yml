@@ -16,6 +16,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Publish package
-        run: mvn --batch-mode deploy
+        run: |
+          mvn --batch-mode deploy -s settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITPACKAGES_TOKEN }}
